@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator BMI</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section class="container mt-2 card-style border-right-radius">
+      <h1 class="title-primary text-center mt-1 text-black">
+        <span id="title-bmi"></span>
+      </h1>
+      <div class="row px-2" id="display-desc">
+        <p class="title-header indented-paragraph mt-2">
+          Berat badan ideal adalah impian semua orang. Tidak hanya memiliki
+          bentuk tubuh yang menunjang penampilan, berat badan ideal juga
+          menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung
+          sekarang di kalkulator BMI
+        </p>
+      </div>
+
+      <div class="row mt-2 justify-content-center" id="display-form">
+        <div class="col-sm">
+          <form id="form-bmi" class="form">
+            <div>
+              <label class="form-label" for="gender">Jenis Kelamin</label>
+              <div class="input-group">
+                <input
+                  type="radio"
+                  name="gender"
+                  id="male"
+                  value="Pria"
+                /><label for="male" class="ml-5px">Pria</label
+                ><input
+                  type="radio"
+                  name="gender"
+                  id="female"
+                  value="Wanita"
+                  class="ml-10"
+                /><label for="female" class="ml-5px">Wanita</label>
+              </div>
+              <span id="genderErrorMessage" class="error-message"></span>
+            </div>
+            <div>
+              <label class="form-label" for="weight">Berat Badan (Kg)</label>
+              <div class="input-group">
+                <span class="input-group-icon"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 512 512"
+                  >
+                    <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                      d="M448 64h-25.98C438.44 92.28 448 125.01 448 160c0 105.87-86.13 192-192 192S64 265.87 64 160c0-34.99 9.56-67.72 25.98-96H64C28.71 64 0 92.71 0 128v320c0 35.29 28.71 64 64 64h384c35.29 0 64-28.71 64-64V128c0-35.29-28.71-64-64-64zM256 320c88.37 0 160-71.63 160-160S344.37 0 256 0 96 71.63 96 160s71.63 160 160 160zm-.3-151.94l33.58-78.36c3.5-8.17 12.94-11.92 21.03-8.41 8.12 3.48 11.88 12.89 8.41 21l-33.67 78.55C291.73 188 296 197.45 296 208c0 22.09-17.91 40-40 40s-40-17.91-40-40c0-21.98 17.76-39.77 39.7-39.94z"
+                    />
+                  </svg> </span
+                ><input
+                  type="number"
+                  name="weight"
+                  id="weight"
+                  class="form-input"
+                  min="1"
+                />
+              </div>
+              <span id="weightErrorMessage" class="error-message"></span>
+            </div>
+            <div>
+              <label class="form-label" for="age">Usia (Tahun)</label>
+              <div class="input-group">
+                <span class="input-group-icon"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 512 512"
+                  >
+                    <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                      d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"
+                    /></svg></span
+                ><input
+                  type="number"
+                  name="age"
+                  id="age"
+                  class="form-input"
+                  min="1"
+                />
+              </div>
+              <span id="ageErrorMessage" class="error-message"></span>
+            </div>
+            <div>
+              <label class="form-label" for="height">Tinggi Badan (Cm)</label>
+              <div class="input-group">
+                <span class="input-group-icon"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 512 512"
+                  >
+                    <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                      d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"
+                    /></svg></span
+                ><input
+                  type="number"
+                  name="height"
+                  id="height"
+                  class="form-input"
+                  min="1"
+                />
+              </div>
+              <span id="heightErrorMessage" class="error-message"></span>
+            </div>
+            <div>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="submitBmiCheck()"
+              >
+                Hitung BMI</button
+              ><button
+                type="reset"
+                onclick="resetForm()"
+                class="btn ml-5px btn-reset btn-outline-secondary"
+              >
+                Reset
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div
+        class="row justify-content-center mt-3"
+        id="resultSection"
+        style="display: none"
+      >
+        <div class="col-full mt-1 text-center" style="height: 390px">
+          <div id="image-result-bmi"></div>
+          <p class="mt-5 desc-result"><span id="bmiResult"></span></p>
+
+          <button
+            onclick="backToForm()"
+            id="btn-back-to-form"
+            class="btn btn-outline-secondary mt-2"
+          >
+            Kembali
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
