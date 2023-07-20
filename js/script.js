@@ -90,16 +90,17 @@ const submitBmiCheck = () => {
   // Determine the BMI category
   if (bmi < 18.5) {
     resultMessage += "Kekurangan berat badan.";
-    img.src = gender == "Pria" ? "/images/kurus-l.svg" : "/images/kurus-p.svg";
+    img.src =
+      gender == "Pria" ? "./images/kurus-l.svg" : "./images/kurus-p.svg";
   } else if (bmi >= 18.5 && bmi <= 24.9) {
     resultMessage += " Normal (Ideal).";
-    img.src = "/images/ideal.svg";
+    img.src = "./images/ideal.svg";
   } else if (bmi >= 25.0 && bmi <= 29.9) {
     resultMessage += " Kelebihan berat badan.";
-    img.src = "/images/kelebihan-berat-badan.svg";
+    img.src = "./images/kelebihan-berat-badan.svg";
   } else {
     resultMessage += " Kegemukan (Obesitas).";
-    img.src = "/images/obesitas.svg";
+    img.src = "./images/obesitas.svg";
   }
 
   // set ketinggian gambar dan mulai menyisipkan gambar
